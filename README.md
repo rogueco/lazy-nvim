@@ -84,7 +84,7 @@ git clone https://github.com/rogueco/lazy-nvim.git %userprofile%\AppData\Local\n
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\
+git clone https://github.com/rogueco/lazy-nvim.git $env:USERPROFILE\AppData\Local\nvim\
 ```
 
 </details>
