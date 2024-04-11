@@ -15,13 +15,6 @@ require('lazy').setup({
 -- Primagen Config
   "folke/tokyonight.nvim",
   "nvim-lua/plenary.nvim", -- for go routines
-  {
-    "rose-pine/neovim",
-    as = "rose-pine",
-    config = function()
-      vim.cmd('colorscheme rose-pine')
-    end
-  },
 --"nvim-tree/nvim-web-devicons",
 -- "nvim-tree/nvim-tree.lua",
 -- "nvim-telescope/telescope.nvim",
@@ -97,6 +90,9 @@ require('lazy').setup({
       }
     end,
   },
+  -- Mason is a package manager for LSPs .NET 
+  { "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
 
   -- NOTE: Plugins can specify dependencies.
   --
