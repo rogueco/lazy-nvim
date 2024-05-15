@@ -1,1 +1,1 @@
-require("rogueco")
+require 'rogueco'
