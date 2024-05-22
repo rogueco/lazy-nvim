@@ -3,13 +3,10 @@ local lsp_installer_ensure_installed = {
   'bashls',
   'omnisharp',
   -- "omnisharp-mono",
-  'cssls',
   'dockerls',
   'eslint',
-  'html',
   'jsonls',
   'pyright',
-  'tsserver',
   'gopls',
   -- "sumneko_lua",
   'lua_ls',
@@ -17,6 +14,14 @@ local lsp_installer_ensure_installed = {
   'lemminx',
   'yamlls',
   'azure_pipelines_ls',
+
+  -- FRONT END SPECIFIC
+  'html',
+  --'vue-language-server', -- TODO: Look into how to get this working
+  'emmet_ls',
+  'tsserver',
+  'tailwindcss',
+  'cssls',
 
   -- DAP
   -- "netcoredbg",
@@ -28,7 +33,7 @@ local lsp_installer_ensure_installed = {
   -- "csharpier",
   -- "jq",
   -- "markdownlint",
-  -- "prettier"
+  --'prettier',
 }
 
 if vim.fn.has 'win32' == 1 then
