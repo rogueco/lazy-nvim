@@ -36,7 +36,7 @@ local lazyPlugins = {
   { 'ryanoasis/vim-devicons', priority = 100 }, -- https://github.com/ryanoasis/vim-devicons
   { 'nvim-tree/nvim-web-devicons' },
   { 'preservim/nerdtree', dependencies = { 'ryanoasis/vim-devicons' }, cmd = { 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind' } }, -- https://github.com/preservim/nerdtree
-  --{ 'stevearc/oil.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  { 'stevearc/oil.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   ------------------------------------------------------------------------
   -- LSP PLUGINS

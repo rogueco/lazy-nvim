@@ -7,7 +7,7 @@ require 'rogueco.plugins._gitsigns-nvim'
 
 require 'rogueco.plugins._nvim-treesitter'
 require 'rogueco.plugins._nerdtree-nvim'
---require 'rogueco.plugins._oil-nvim'
+require 'rogueco.plugins._oil-nvim'
 
 -- LSP Plugins
 require 'rogueco.plugins._mason-nvim'

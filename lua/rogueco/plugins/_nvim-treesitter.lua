@@ -1,46 +1,3 @@
--- FROM: https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
--- vim.opt.foldmethod			= 'expr'
--- vim.opt.foldexpr				= 'nvim_treesitter#foldexpr()'
----WORKAROUND
--- vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
--- 	group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
--- 	callback = function()
--- 		vim.opt.foldmethod = 'expr'
--- 		vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
--- 		vim.opt.foldcolumn = "1" -- DEFINES 1 COL AT WINDW LEFT TO INDICATE FOLDING
--- 		vim.opt.foldlevelstart = 99 -- START FILE WITH ALL FOLDS OPENED
-
--- -- let javaScript_fold=1 "activate folding by JS syntax
--- -- " let cs_fold=
--- -- " let xml_syntax_folding=1
--- -- let xml_folding=1
--- -- let yaml_fold=1
--- -- let vb_fold=1
--- 	end
-
--- })
---ENDWORKAROUND
-
--- :verbose set indentexpr?
--- Guy on the internets output: indentexpr=nvim_treesitter#indent()
--- My output: indentexpr=
--- :checkhealth nvim-treesitter
--- Stock Standard:
--- indentexpr=GetCSIndent(v:lnum)
--- Last set from /usr/share/nvim/runtime/indent/cs.vim line 19
-
--- TEMP INDENT SETTINGS TO TEST THINGS
--- vim.opt.autoindent = false
--- vim.opt.smartindent = false
--- vim.opt.expandtab = false
--- vim.opt.tabstop = 2
--- vim.opt.shiftwidth = 2
--- SEE: ftplugin/cs.lua for more lang specifics
-
--- vim.cmd[[filetype plugin on]]
--- vim.cmd[[filetype indent off]]
--- vim.cmd[[set indentexpr=nvim_treesitter#indent()]]
-
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'c_sharp',
@@ -156,24 +113,3 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
-
--- THE BELOW IS NOT WORKING, IT BREAKS THE DOT COMMAND WHEN YOURE TRYING TO DOT REPEAT SOMETHING
--- DONE WITH T OR F
--- local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
--- Repeat movement with ; and ,
--- ensure ; goes forward and , goes backward regardless of the last direction
-
--- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
--- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-
--- vim way: ; goes to the direction you were moving.
--- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
--- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
-
--- Optionally, make builtin f, F, t, T also repeatable with ; and ,
--- vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
--- vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
--- vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
--- vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
--- THE BELOW IS NOT WORKING, IT BREAKS THE DOT COMMAND WHEN YOURE TRYING TO DOT REPEAT SOMETHING
--- DONE WITH T OR F
