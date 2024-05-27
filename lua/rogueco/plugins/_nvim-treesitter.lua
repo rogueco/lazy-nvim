@@ -16,6 +16,7 @@ require('nvim-treesitter.configs').setup {
     'yaml',
     'query',
     'sql',
+    'go'
   },
   indent = {
     enable = true,

@@ -1,5 +1,6 @@
 local lsp_installer_ensure_installed = {
   -- LSP
+  'gopls',
   'bashls',
   'omnisharp',
   -- "omnisharp-mono",
@@ -7,7 +8,6 @@ local lsp_installer_ensure_installed = {
   'eslint',
   'jsonls',
   'pyright',
-  'gopls',
   -- "sumneko_lua",
   'lua_ls',
   --"sqls", -- https://github.com/lighttiger2505/sqls
@@ -36,13 +36,14 @@ local lsp_installer_ensure_installed = {
   --'prettier',
 }
 
-if vim.fn.has 'win32' == 1 then
-  table.insert(lsp_installer_ensure_installed, 'powershell_es')
-elseif vim.fn.has 'unix' == 1 then
-  table.insert(lsp_installer_ensure_installed, 'omnisharp_mono')
-  -- table.insert(lsp_installer_ensure_installed, "omnisharp-mono")
-end
+--if vim.fn.has 'win32' == 1 then
+--  table.insert(lsp_installer_ensure_installed, 'powershell_es')
+--elseif vim.fn.has 'unix' == 1 then
+--  table.insert(lsp_installer_ensure_installed, 'omnisharp_mono')
+-- table.insert(lsp_installer_ensure_installed, "omnisharp-mono")
+--end
 
 require('mason-lspconfig').setup {
   ensure_installed = lsp_installer_ensure_installed,
+  automatic_installation = true,
 }
